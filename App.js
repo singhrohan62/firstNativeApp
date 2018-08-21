@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,Image } from 'react-native';
+//import Icon from 'react-native-vector-icons/FontAwesome';   One of the other ways to use vector-icons
+import { SocialIcon } from 'react-native-elements'
 
 export default class App extends React.Component {
   render() {
@@ -10,7 +12,12 @@ export default class App extends React.Component {
         <Text style={[styles.headerStyle, styles.textColor]}>Rohan Singh</Text>
         <Text style={[styles.subHeaderStyle, styles.textColor]}>Welcome to my first React-Native app</Text>
         <Text style={styles.textColor}>Shake your phone to open the developer menu.</Text>
+        <View style={{flex: 1, flexDirection: 'row',paddingTop:20}}>
+              <SocialIcon type='facebook'/>
+              <SocialIcon type='github'/>
+        </View>
       </View>
+      
     );
   }
 }
@@ -21,6 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#19324c',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop:80,
   },
   textColor: {
     color:"#fff",
