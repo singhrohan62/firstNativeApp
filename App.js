@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Image, Linking } from 'react-native';
 //import Icon from 'react-native-vector-icons/FontAwesome';   One of the other ways to use vector-icons
 import { SocialIcon } from 'react-native-elements'
 
@@ -14,10 +14,11 @@ export default class App extends React.Component {
         <Text style={[styles.subHeaderStyle, styles.textColor]}>Welcome to my first React-Native app</Text>
         <Text style={styles.textColor}>I know its a kind of boring app, but its the first one, therefore it is excused for now.</Text>
         <Text style={styles.textColor}>Click on anyone of the given below social media icons to know more about me.....</Text>
-        <Text style={[styles.subHeaderStyle, styles.textColor]}>Here are some of the platforms I use</Text>
+        <Text style={[styles.subHeaderStyle, styles.textColor]}>Here are some of the platforms where you can contact me</Text>
         <View style={{flex: 1, flexDirection: 'row',paddingTop:20}}>
-              <SocialIcon type='facebook'/>
-              <SocialIcon type='github'/>
+              <SocialIcon type='facebook' onPress={ ()=>{ Linking.openURL('https://www.facebook.com/people/Rohan-Singh/100002604705137')}}/>
+              <SocialIcon type='github' onPress={() => {Linking.openURL('https://github.com/singhrohan62')}}/>
+              <SocialIcon type='linkedin' onPress={() => {Linking.openURL('https://www.linkedin.com/in/rohan-singh-015003154/')}}/>
         </View>
       </View>
       </ScrollView>
